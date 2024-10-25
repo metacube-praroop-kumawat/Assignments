@@ -6,6 +6,8 @@
 * Praroop Kumawat        2024/10/24         Making functions to do specified operations on Arrays
 ********************************************************************************************************/
 
+package com.operationsOnArray;
+
 import java.util.Scanner;
 
 public class ArrOperations {
@@ -19,7 +21,7 @@ public class ArrOperations {
 	public int maxMirror(int arr[]) {
 		// Throw the exception if the array is empty
 		if( arr.length == 0) {
-			throw new IllegalArgumentException("Array is empty, cannot find mirror section");
+			throw new AssertionError("Array is empty, cannot find mirror section");
 		}
 		int maxMirror = 0;
 		int n  = arr.length;
@@ -112,11 +114,11 @@ public class ArrOperations {
 		}
 		int splitIndex = -1;
 		int n = arr.length;
-		int sum = 0;
+		double sum = 0;
 		for(int i = 0; i < n; i++ ) {
 			sum += arr[i];
 		}
-		int halfSum = 0;
+		double halfSum = 0;
 		for(int i = 0; i < n; i++) {
 			halfSum += arr[i];
 			if( halfSum == sum/2) {
