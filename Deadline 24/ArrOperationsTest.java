@@ -16,28 +16,22 @@ class ArrOperationsTest {
 		int array2[] = {1,2,3,4,5,3,2,1};
 		int array3[] = {1,1,1,1,1};
 		int array4[] = {-1, 1, -2, 3, -2, 1};
-		int array5[] = {};
 		
 		int expected1 = arrayOperations.maxMirror(array1);
 		int expected2 = arrayOperations.maxMirror(array2);
 		int expected3 = arrayOperations.maxMirror(array3);
 		int expected4 = arrayOperations.maxMirror(array4);
-		AssertionError exception1 = assertThrows(AssertionError.class, () ->{
-			arrayOperations.maxMirror(array5);
-		});
-		
-		
+				
 		int actual1 = 4;
 		int actual2 = 3;
 		int actual3 = 5;
 		int actual4 = 5;
-		String actual5 = "Array is empty, cannot find mirror section";
-		
+				
 		assertEquals(actual1, expected1);
 		assertEquals(actual2, expected2);
 		assertEquals(actual3, expected3);
 		assertEquals(actual4, expected4);
-		assertEquals(actual5, exception1.getMessage());
+	
 		
 	}
 		
@@ -108,6 +102,108 @@ class ArrOperationsTest {
 			assertEquals(actual3, expected3);
 		}
 		
+		@Test
+		void test_forExceptions_forMaxMirror() {
+			ArrOperations arrayOperations = new ArrOperations();
+			
+			int array1[] = {};
+			int array2[] = null;
+			
+			AssertionError exception1 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.maxMirror(array1);
+			});
+			AssertionError exception2 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.maxMirror(array2);
+			});
+			
+			String actual1 = "Array is empty, cannot find mirror section";
+			String actual2 = "Array can't be null";
+			
+			assertEquals(actual1, exception1.getMessage());
+			assertEquals(actual2, exception2.getMessage());
+		}
+		
+		@Test
+		void test_forExceptions_forCountClums() {
+			ArrOperations arrayOperations = new ArrOperations();
+			
+			int array1[] = {};
+			int array2[] = null;
+			
+			AssertionError exception1 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.countClumps(array1);
+			});
+			AssertionError exception2 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.countClumps(array2);
+			});
+			
+			String actual1 = "Array is empty, cannot find clumps";
+			String actual2 = "Array can't be null";
+			
+			assertEquals(actual1, exception1.getMessage());
+			assertEquals(actual2, exception2.getMessage());
+		}
+		
+		@Test
+		void test_forExceptions_forfixXY() {
+			ArrOperations arrayOperations = new ArrOperations();
+			
+			int array1[] = {};
+			int array2[] = {1,4,3,5,5,4};
+			int array3[] = {4,1,5,4,6};
+			int array4[] = {4,4,1,5,5};
+			int array5[] = null;
+			
+			AssertionError exception1 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.fixXY(array1, 4, 5);
+			});
+			AssertionError exception2 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.fixXY(array2, 4, 5);
+			});
+			AssertionError exception3 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.fixXY(array3, 4, 5);
+			});
+			AssertionError exception4 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.fixXY(array4, 4, 5);
+			});
+			AssertionError exception5 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.fixXY(array5, 4, 5);
+			});
+			
+			String actual1 = "Array is empty, cannot perform rearranging";
+			String actual2 = "X is at last index, cannot be followed by Y";
+			String actual3 = "X are in large number then Y, all the rearranging is not possible";
+			String actual4 = "X is immediately followed by another X, Y cannot be inserted in between";
+			String actual5 = "Array can't be null";
+			
+			assertEquals(actual1, exception1.getMessage());
+			assertEquals(actual2, exception2.getMessage());
+			assertEquals(actual3, exception3.getMessage());
+			assertEquals(actual4, exception4.getMessage());
+			assertEquals(actual5, exception5.getMessage());
+			
+		}
+		
+		@Test
+		void test_forExceptions_forSplitArray() {
+			ArrOperations arrayOperations = new ArrOperations();
+			
+			int array1[] = {};
+			int array2[] = null;
+			
+			AssertionError exception1 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.splitArray(array1);
+			});
+			AssertionError exception2 = assertThrows(AssertionError.class, () ->{
+				arrayOperations.splitArray(array2);
+			});
+			
+			String actual1 = "Array is empty, cannot find split index";
+			String actual2 = "Array can't be null";
+			
+			assertEquals(actual1, exception1.getMessage());
+			assertEquals(actual2, exception2.getMessage());
+		}
 		
 		
 }

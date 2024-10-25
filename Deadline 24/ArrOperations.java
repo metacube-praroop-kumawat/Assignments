@@ -19,8 +19,10 @@ public class ArrOperations {
 	 * @return - length maxMirror as its the maximum length
 	 */
 	public int maxMirror(int arr[]) {
+		if(arr == null) {
+			throw new AssertionError("Array can't be null");
 		// Throw the exception if the array is empty
-		if( arr.length == 0) {
+		}else if( arr.length == 0) {
 			throw new AssertionError("Array is empty, cannot find mirror section");
 		}
 		int maxMirror = 0;
@@ -46,10 +48,12 @@ public class ArrOperations {
 	 * @return - int clumps which are total number of subarray possible
 	 */
 	public int countClumps(int arr[]) {
+		if(arr == null) {
+			throw new AssertionError("Array can't be null");
 		// Throw the exception if the array is empty
-		if( arr.length == 0) {
-			throw new IllegalArgumentException("Array is empty, cannot find clumps");
-		}
+		}else if( arr.length == 0) {
+			throw new AssertionError("Array is empty, cannot find clumps");
+		} 
 		int clumps = 0;
 		boolean prevIsEqual = false;
 		// loop to check for subarray with same elements
@@ -78,14 +82,35 @@ public class ArrOperations {
 	 * @return - arr array after rearranging the original one
 	 */
 	public int[] fixXY (int arr[], int X, int Y) {
+		if(arr == null) {
+			throw new AssertionError("Array can't be null");
 		// Throw the exception if the array is empty
-		if( arr.length == 0) {
-			throw new IllegalArgumentException("Array is empty, cannot perform rearranging");
+		}else if( arr.length == 0) {
+			throw new AssertionError("Array is empty, cannot perform rearranging");
+		}else if(arr[arr.length-1] == X) {
+			throw new AssertionError("X is at last index, cannot be followed by Y");
+		}
+		// for equal number of X and Y 
+		int countX = 0;
+		int countY = 0;
+		for(int i = 0; i < arr.length; i++) {
+			if(arr[i] == X) {
+				countX++;
+			}else if(arr[i] == Y) {
+				countY++;
+			}
+		}
+		if(countX > countY) {
+			throw new AssertionError("X are in large number then Y, all the rearranging is not possible");
 		}
 		for(int i=0; i<arr.length-1; i++) {
+			if(arr[i] == X && arr[i+1] == X) {
+				throw new AssertionError("X is immediately followed by another X, Y cannot be inserted in between");
+			}
 			//checking for index where X is not followed by Y
 			if(arr[i] == X && arr[i+1]!= Y) {
 				for(int j=0; j<arr.length; j++) {
+					
 					// case for j=0 as Index out of bound exception
 					if(j==0 && arr[j] == Y) {
 						arr[j] = arr[i+1];
@@ -108,9 +133,11 @@ public class ArrOperations {
 	 * @return - integer splitIndex around which array to be splitted
 	 */
 	public int splitArray(int arr[]) {
+		if(arr == null) {
+			throw new AssertionError("Array can't be null");
 		// Throw the exception if the array is empty
-		if( arr.length == 0) {
-			throw new IllegalArgumentException("Array is empty, cannot find split index");
+		}else if( arr.length == 0) {
+			throw new AssertionError("Array is empty, cannot find split index");
 		}
 		int splitIndex = -1;
 		int n = arr.length;
