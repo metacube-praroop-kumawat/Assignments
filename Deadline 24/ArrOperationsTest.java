@@ -103,7 +103,7 @@ class ArrOperationsTest {
 		}
 		
 		@Test
-		void test_forExceptions_forMaxMirror() {
+		void maxMirro_whenPassedNegativeTestCaseArray_givesExceptions() {
 			ArrOperations arrayOperations = new ArrOperations();
 			
 			int array1[] = {};
@@ -124,7 +124,7 @@ class ArrOperationsTest {
 		}
 		
 		@Test
-		void test_forExceptions_forCountClums() {
+		void countClumps_whenPassedNegativeTestCaseArray_throwsException() {
 			ArrOperations arrayOperations = new ArrOperations();
 			
 			int array1[] = {};
@@ -145,7 +145,7 @@ class ArrOperationsTest {
 		}
 		
 		@Test
-		void test_forExceptions_forfixXY() {
+		void fixXY_whenPassedNegativeTestCaseArray_throwsException() {
 			ArrOperations arrayOperations = new ArrOperations();
 			
 			int array1[] = {};
@@ -185,7 +185,7 @@ class ArrOperationsTest {
 		}
 		
 		@Test
-		void test_forExceptions_forSplitArray() {
+		void splitArray_whenPassedNegativeTestCaseArray_throwsException() {
 			ArrOperations arrayOperations = new ArrOperations();
 			
 			int array1[] = {};
@@ -203,9 +203,7 @@ class ArrOperationsTest {
 			
 			assertEquals(actual1, exception1.getMessage());
 			assertEquals(actual2, exception2.getMessage());
-		}
-		
-		
+		}		
 }
 
 
