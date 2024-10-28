@@ -13,10 +13,9 @@ import java.util.Scanner;
 public class ArrOperations {
 	
 	/**
-	 * find the max length of mirror in an array such that left side portion should be
-	 * 		mirror image of right side portion
-	 * @param - arr array in which maximum length mirror is present
-	 * @return - length maxMirror as its the maximum length
+	 * find the max length of mirror in an array such that left side portion should be mirror image of right side portion
+	 * @param arr array in which maximum length mirror is present
+	 * @return length maxMirror as its the maximum length
 	 */
 	public int maxMirror(int arr[]) {
 		if (arr == null) {
@@ -44,8 +43,8 @@ public class ArrOperations {
 	
 	/**
 	 * counting the subarray with same elements possible in array
-	 * @param - arr array in which subarray are present
-	 * @return - int clumps which are total number of subarray possible
+	 * @param arr array in which subarray are present
+	 * @return int clumps which are total number of subarray possible
 	 */
 	public int countClumps(int arr[]) {
 		if (arr == null) {
@@ -74,12 +73,11 @@ public class ArrOperations {
 	}
 	
 	/**
-	 * X should be followed by Y, thus rearranging array by swapping
-	 * 		 Y with other elements present in array
-	 * @param arr - array in which swapping is performed
-	 * @param X - followed by Y, also X is fixed 
-	 * @param Y - should follow X immediately
-	 * @return - arr array after rearranging the original one
+	 * X should be followed by Y, thus rearranging array by swapping Y with other elements present in array
+	 * @param arr array in which swapping is performed
+	 * @param X followed by Y, also X is fixed 
+	 * @param Y should follow X immediately
+	 * @return arr array after rearranging the original one
 	 */
 	public int[] fixXY (int arr[], int X, int Y) {
 		if (arr == null) {
@@ -129,8 +127,8 @@ public class ArrOperations {
 	
 	/**
 	 * splitting array at index where left subarray sum is equal to right subarray sum
-	 * @param arr - array in which index to be found
-	 * @return - integer splitIndex around which array to be splitted
+	 * @param arr array in which index to be found
+	 * @return integer splitIndex around which array to be splitted
 	 */
 	public int splitArray(int arr[]) {
 		if (arr == null) {
